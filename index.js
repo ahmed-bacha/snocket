@@ -4,17 +4,14 @@ var http = require('http'),
     index = fs.readFileSync(__dirname + '/index.html');
 
 var express = require('express');
-var app = express();
+var app1 = express();
 
 // Routing
-app.use(express.static(__dirname + '/public'));
+app1.use(express.static(__dirname + '/public'));
 
-
-// Send index.html to all requests
-var app = http.createServer();
 
 // Socket.io server listens to our app
-var io = require('socket.io').listen(app);
+var io = require('socket.io').listen(app1);
 
 // Emit welcome message on connection
 io.sockets.on('connection', function(socket) {
