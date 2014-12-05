@@ -47,19 +47,19 @@
       y = e.accelerationIncludingGravity.y;
 
 
-      if (y<0 && y<x ) {
+      if ( y<0 && x<1 && x>-1) {
         document.getElementById("rotation").innerHTML = "up";
         socket.emit('up', {direction: 'up'});
         // rotate = "up";
-      }else if (x>0 && x>y) {
+      }else if ( x>0 && y<1 && y>-1) {
         document.getElementById("rotation").innerHTML = "left";
         socket.emit('left', {direction: 'left'});
         // rotate = "left";
-      }else if (x<0 && y>x ) {
+      }else if ( x<0 && y<1 && y>-1) {
         document.getElementById("rotation").innerHTML = "right";
         socket.emit('right', {direction: 'right'});
         // rotate = "right";
-      }else if (y>0 && y>x ) {
+      }else if ( y>0 && x<1 && x>-1) {
           document.getElementById("rotation").innerHTML = "down";
           socket.emit('down', {direction: 'down'});
           // rotate = "down";
