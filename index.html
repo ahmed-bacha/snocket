@@ -3,39 +3,6 @@
   <title>Javascript Snakes</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <link href="snakes.css" media="screen, print" rel="stylesheet" type="text/css" />
-  <script src='http://161.3.200.40/socket.io/socket.io.js'></script>
-
-  <script type="text/javascript">
-
-
-  var socket = io.connect('http://161.3.200.40');
-
-  socket.on('welcome', function(data) {
-    console.log(data);
-  });
-
-
-  socket.on('left', function() {
-    game.snake.move(DIR.LEFT);
-  });
-
-  socket.on('right', function() {
-    game.snake.move(DIR.RIGHT);
-  });
-
-  socket.on('up', function() {
-    game.snake.move(DIR.UP);
-  });
-
-  socket.on('down', function() {
-    game.snake.move(DIR.DOWN);
-  });
-
-  </script>
-
-
-
-
 
 </head>
 
