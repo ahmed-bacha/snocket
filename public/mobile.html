@@ -27,6 +27,7 @@
     console.log(data);
   });
 
+  var rotate = "";
 
   var x = 0, y = 0,
   vx = 0, vy = 0,
@@ -45,20 +46,23 @@
       x = e.accelerationIncludingGravity.x;
       y = e.accelerationIncludingGravity.y;
 
-      // Avant
-      if (y>0 && y>x) {
-        document.getElementById("rotation").innerHTML = "Avant";
-        socket.emit('up', {direction: 'up'});
 
-      }else if (x<0 && x<y) {
-        document.getElementById("rotation").innerHTML = "Gauche";
+      if (y<0 && y<x && rotate != "up") {
+        document.getElementById("rotation").innerHTML = "up";
+        socket.emit('up', {direction: 'up'});
+        rotate = "up";
+      }else if (x>0 && x>y && rotate != "left") {
+        document.getElementById("rotation").innerHTML = "left";
         socket.emit('left', {direction: 'left'});
-      }else if (x>0 && y<x) {
-        document.getElementById("rotation").innerHTML = "Droite";
+        rotate = "left";
+      }else if (x<0 && y>x && rotate != "right") {
+        document.getElementById("rotation").innerHTML = "right";
         socket.emit('right', {direction: 'right'});
-      }else if (y<0 && y<x) {
-          document.getElementById("rotation").innerHTML = "Arriere";
+        rotate = "right";
+      }else if (y>0 && y>x && rotate != "down") {
+          document.getElementById("rotation").innerHTML = "down";
           socket.emit('down', {direction: 'down'});
+          rotate = "down";
       }
 
 
