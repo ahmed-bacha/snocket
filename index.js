@@ -20,19 +20,19 @@ io.sockets.on('connection', function(socket) {
 
   socket.on('left', function(data){
     console.log('left');
-    socket.emit('snake_left');
+    io.emit('snake_left', { message: 'Left!' });
   });
 
   socket.on('up', function(data){
-    socket.emit('snake_up');
+    io.emit('snake_up', { message: 'Up!' });
   });
 
   socket.on('right', function(data){
-    socket.emit('snake_right');
+    io.emit('snake_right', { message: 'Right!' });
   });
 
   socket.on('down', function(data){
-    socket.emit('snake_down');
+    io.emit('snake_down', { message: 'Down!' });
   });
 
   //socket.on('right', console.log);
