@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src='//localhost:3000/socket.io/socket.io.js'></script>
+    <script src='http://161.3.200.40/socket.io/socket.io.js'></script>
     <script>
-      var socket = io.connect('//localhost:3000');
+      var socket = io.connect('http://161.3.200.40');
 
       socket.on('welcome', function(data) {
         console.log(data);

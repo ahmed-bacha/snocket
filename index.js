@@ -22,4 +22,4 @@ io.sockets.on('connection', function(socket) {
   //socket.on('right', console.log);
 });
 
-app.listen(3000);
+app.listen(80);
