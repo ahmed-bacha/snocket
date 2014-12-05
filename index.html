@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src='//localhost:3000/socket.io/socket.io.js'></script>
+    <script>
+      var socket = io.connect('//localhost:3000');
+
+      socket.on('welcome', function(data) {
+        console.log(data);
+      });
+
+      socket.emit('left', {direction: 'left'});
+      //socket.emit('right', {data: 'right'});
+    </script>
+  </head>
+  <body>
+    <h1>Snockets</h1>
+  </body>
+</html>

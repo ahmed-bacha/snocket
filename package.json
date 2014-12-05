@@ -1,0 +1,8 @@
+{
+  "name": "snockets",
+  "version": "0.0.1",
+  "description": "Snake love sockets",
+  "dependencies": {
+    "socket.io": "^1.2.1"
+  }
+}
