@@ -78,19 +78,19 @@
     console.log(data);
   });
 
-  socket.on('left', function(data) {
+  socket.on('snake_left', function(data) {
     game.snake.move(DIR.LEFT);
   });
 
-  socket.on('right', function(data) {
+  socket.on('snake_right', function(data) {
     game.snake.move(DIR.RIGHT);
   });
 
-  socket.on('up', function(data) {
+  socket.on('snake_up', function(data) {
     game.snake.move(DIR.UP);
   });
 
-  socket.on('down', function(data) {
+  socket.on('snake_down', function(data) {
     game.snake.move(DIR.DOWN);
   });
 
