@@ -1,19 +1,18 @@
-var http = require('http'),
-    fs = require('fs'),
-    // NEVER use a Sync function except at start-up!
-    index = fs.readFileSync(__dirname + '/index.html');
-
 var express = require('express');
-var app1 = express();
+var app = express();
+var server = require('http').createServer(app);
+var port = 80;
 
-// Send index.html to all requests
-var app = http.createServer(function(req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  res.send(app1.use(express.static(__dirname + '/public')));
+server.listen(port, function () {
+  console.log('Server listening at port %d', port);
 });
 
+// Routing
+app.use(express.static(__dirname + '/public'));
+
+
 // Socket.io server listens to our app
-var io = require('socket.io').listen(app);
+var io = require('socket.io').listen(server);
 
 // Emit welcome message on connection
 io.sockets.on('connection', function(socket) {
