@@ -3,6 +3,14 @@ var http = require('http'),
     // NEVER use a Sync function except at start-up!
     index = fs.readFileSync(__dirname + '/index.html');
 
+var express = require('express');
+var app = express();
+
+// Routing
+app.use(express.static(__dirname + '/public'));
+
+
+
 // Send index.html to all requests
 var app = http.createServer(function(req, res) {
   res.writeHead(200, {'Content-Type': 'text/html'});
