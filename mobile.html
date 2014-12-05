@@ -74,26 +74,15 @@
         document.getElementById("rotation").innerHTML = "Avant";
         socket.emit('up', {direction: 'up'});
 
-        // Gauche
-        if (x<0 && x<y) {
-          document.getElementById("rotation").innerHTML = "Gauche";
-          socket.emit('left', {direction: 'left'});
-        }
-
-      }
-
-
-
-      // Droite
-      if (x>0 && y<x) {
+      }else if (x<0 && x<y) {
+        document.getElementById("rotation").innerHTML = "Gauche";
+        socket.emit('left', {direction: 'left'});
+      }else if (x>0 && y<x) {
         document.getElementById("rotation").innerHTML = "Droite";
         socket.emit('right', {direction: 'right'});
-
-        // Arriere
-        if (y<0 && y<x) {
+      }else if (y<0 && y<x) {
           document.getElementById("rotation").innerHTML = "Arriere";
           socket.emit('down', {direction: 'down'});
-        }
       }
 
 
