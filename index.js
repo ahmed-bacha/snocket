@@ -9,9 +9,11 @@ var app1 = express();
 // Routing
 app1.use(express.static(__dirname + '/public'));
 
+// Send index.html to all requests
+var app = http.createServer();
 
 // Socket.io server listens to our app
-var io = require('socket.io').listen(app1);
+var io = require('socket.io').listen(app);
 
 // Emit welcome message on connection
 io.sockets.on('connection', function(socket) {
