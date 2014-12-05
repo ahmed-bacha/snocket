@@ -23,7 +23,15 @@ io.sockets.on('connection', function(socket) {
   socket.on('up', function(data){
     console.log(data);
   });
-  
+
+  socket.on('right', function(data){
+    console.log(data);
+  });
+
+  socket.on('down', function(data){
+    console.log(data);
+  });
+
   //socket.on('right', console.log);
 });
 
