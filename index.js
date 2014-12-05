@@ -1,16 +1,13 @@
 var http = require('http'),
-    fs = require('fs'),
-    // NEVER use a Sync function except at start-up!
-    index = fs.readFileSync(__dirname + '/index.html');
-
-var express = require('express');
-var app1 = express();
+    express = require('express'),
+    app = express();
 
 // Routing
-app1.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
+
 
 // Send index.html to all requests
-var app = http.createServer();
+var server = http.createServer();
 
 // Socket.io server listens to our app
 var io = require('socket.io').listen(app);
