@@ -65,7 +65,7 @@ body {
     margin: 0;
 }
 
-/* 
+/*
  * Addresses font-family inconsistency between 'textarea' and other form elements.
  */
 
@@ -125,9 +125,9 @@ abbr[title] {
  * Addresses style set to 'bolder' in FF3/4, S4/5, Chrome
 */
 
-b, 
-strong { 
-    font-weight: bold; 
+b,
+strong {
+    font-weight: bold;
 }
 
 blockquote {
@@ -256,7 +256,7 @@ img {
 }
 
 /*
- * Corrects overflow displayed oddly in IE9 
+ * Corrects overflow displayed oddly in IE9
  */
 
 svg:not(:root) {
@@ -351,8 +351,8 @@ table input {
  */
 
 button,
-html input[type="button"], 
-input[type="reset"], 
+html input[type="button"],
+input[type="reset"],
 input[type="submit"] {
     cursor: pointer; /* 1 */
     -webkit-appearance: button; /* 2 */
@@ -413,7 +413,7 @@ textarea {
    Tables
    ========================================================================== */
 
-/* 
+/*
  * Remove most spacing between table cells
  */
 
@@ -571,36 +571,3 @@ body {
             margin: 5em;
            display: inline-block;
 }
-
-/*****************************/
-/* @media query based layout */
-/*****************************/
-
-@media screen and (min-width: 0px) { /* 48x36 x 10px chunks */
-  #snakes     { width: 480px; height: 360px; font-size: 7pt; }
-  #logo       { width: 200px; height: 100px; }
-
-  .watermark.top   { top:    -52px; width: 150px; height:  50px; background: url('images/firesnake/360.top.png');   }
-  .watermark.left  { left:  -152px; width: 150px; height: 360px; background: url('images/firesnake/360.left.png');  }
-  .watermark.right { right: -152px; width: 150px; height: 360px; background: url('images/firesnake/360.right.png'); }
-}
-
-@media screen and (min-width: 1200px) { /* 48x36 x 15px chunks */
-  #snakes     { width: 720px; height: 540px; font-size: 10pt; }
-  #logo       { width: 300px; height: 150px; }
-
-  .watermark.top   { top:    -77px; width: 225px; height:  75px; background: url('images/firesnake/540.top.png');   }
-  .watermark.left  { left:  -227px; width: 225px; height: 540px; background: url('images/firesnake/540.left.png');  }
-  .watermark.right { right: -227px; width: 225px; height: 540px; background: url('images/firesnake/540.right.png'); }
-}
-
-@media screen and (min-width: 1600px) { /* 48x36 20px chunks */
-  #snakes     { width: 960px; height: 720px; font-size: 12pt; }
-  #logo       { width: 400px; height: 200px; }
-
-  .watermark.top   { top:   -102px; width: 300px; height: 100px; background: url('images/firesnake/720.top.png');   }
-  .watermark.left  { left:  -302px; width: 300px; height: 720px; background: url('images/firesnake/720.left.png');  }
-  .watermark.right { right: -302px; width: 300px; height: 720px; background: url('images/firesnake/720.right.png'); }
-}
-
-
