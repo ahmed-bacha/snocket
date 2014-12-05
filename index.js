@@ -16,9 +16,14 @@ var io = require('socket.io').listen(app);
 io.sockets.on('connection', function(socket) {
   socket.emit('welcome', { message: 'Welcome!' });
 
-  socket.on('left', function(){
-    socket.emit('snake_move', {direction: 'left'})
+  socket.on('left', function(data){
+    console.log(data);
   });
+
+  socket.on('up', function(data){
+    console.log(data);
+  });
+  
   //socket.on('right', console.log);
 });
 
