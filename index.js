@@ -10,12 +10,8 @@ var app = express();
 app.use(express.static(__dirname + '/public'));
 
 
-
 // Send index.html to all requests
-var app = http.createServer(function(req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  res.end(index);
-});
+var app = http.createServer();
 
 // Socket.io server listens to our app
 var io = require('socket.io').listen(app);
